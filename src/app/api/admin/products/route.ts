@@ -5,6 +5,8 @@ import { prisma } from "@/lib/prisma";
 import { productSchema } from "@/lib/validations";
 import { errorHandler } from "@/lib/error-handler";
 
+export const dynamic = 'force-dynamic';
+
 async function isAdmin() {
   const session = await getServerSession(authOptions);
   return (session?.user as any)?.role === "ADMIN";

@@ -5,6 +5,8 @@ import { prisma } from "@/lib/prisma";
 import { profileUpdateSchema } from "@/lib/validations";
 import { errorHandler } from "@/lib/error-handler";
 
+export const dynamic = 'force-dynamic';
+
 export async function GET() {
   try {
     const session = await getServerSession(authOptions);
